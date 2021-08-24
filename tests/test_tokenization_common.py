@@ -935,6 +935,7 @@ class TokenizerTesterMixin:
                     self.assertEqual(truncated_sequence, sequence[:-2])
 
                     self.assertEqual(len(overflowing_tokens), 2 + stride)
+                    self.assertEqual(overflowing_tokens, sequence[-(2 + stride) :])
 
     def test_maximum_encoding_length_pair_input(self):
         tokenizers = self.get_tokenizers(do_lower_case=False, model_max_length=100)
